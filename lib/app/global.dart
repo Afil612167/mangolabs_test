@@ -34,17 +34,12 @@ Widget buildTextWidget(String data,
 
 Widget buildElevatedButton(
     {required Function onPressed,
-    Color backgroundcolor = orangeColor,
     required title,
     Color titleColor = white,
     double fontSize = 10,
-    Widget? child,
-    OutlinedBorder? shape}) {
+    Widget? child,}) {
   return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: backgroundcolor,
-      shape: shape,
-    ),
+   
     onPressed: () {
       onPressed();
     },
@@ -53,26 +48,6 @@ Widget buildElevatedButton(
   );
 }
 
-class ShimmerGrid extends StatelessWidget {
-  const ShimmerGrid({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
-          childAspectRatio: 1 / 1.2),
-      itemCount: 10, // Replace with your actual item count
-      itemBuilder: (context, index) {
-        return shimmerContainer();
-      },
-    );
-  }
-}
 
 Widget shimmerContainer() {
   return Shimmer.fromColors(
