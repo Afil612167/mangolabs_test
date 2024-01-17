@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mangolabs_test/app/global.dart';
+import 'package:mangolabs_test/app/model/product_grid_style_enum.dart';
 import 'package:mangolabs_test/app/model/product_model.dart';
 import 'package:mangolabs_test/app/view/product_details_screen/product_details_screen.dart';
 
@@ -37,7 +38,8 @@ GestureDetector productGrid(
                     imageUrl: image,
                     placeholder: (context, url) =>
                         shimmerContainer(), // Placeholder widget
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                   const Align(
                       alignment: Alignment.topLeft,
@@ -45,7 +47,7 @@ GestureDetector productGrid(
                 ],
               ),
             ),
-            if (provider.productGridExpanded)
+            if (provider.productGridStyle == ProductGridStyles.style1)
               Column(
                 children: [
                   const SizedBox(

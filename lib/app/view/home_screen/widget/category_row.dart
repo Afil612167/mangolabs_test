@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mangolabs_test/app/controller/home_screen_controller.dart';
 import 'package:mangolabs_test/app/global.dart';
+import 'package:mangolabs_test/app/model/product_grid_style_enum.dart';
 import 'package:provider/provider.dart';
 
 Row categoryRow() {
@@ -22,11 +23,13 @@ Row categoryRow() {
       Consumer<HomeScreenController>(builder: (context, provider, _) {
         return GestureDetector(
           onTap: () {
-            provider.productGridExpanded
-                ? provider.productGridExpandedUpdate(false)
-                : provider.productGridExpandedUpdate(true);
+            if (provider.productGridStyle == ProductGridStyles.style1) {
+              provider.productGridExpandedUpdate(ProductGridStyles.style2);
+            } else {
+              provider.productGridExpandedUpdate(ProductGridStyles.style1);
+            }
           },
-          child: provider.productGridExpanded
+          child: provider.productGridStyle == ProductGridStyles.style1
               ? const Icon(Icons.grid_view_rounded)
               : Row(
                   children: [

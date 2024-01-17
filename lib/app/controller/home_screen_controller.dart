@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:mangolabs_test/app/model/product_grid_style_enum.dart';
 import 'package:mangolabs_test/app/model/product_model.dart';
 
+
 class HomeScreenController extends ChangeNotifier {
-  bool productGridExpanded = true;
-  productGridExpandedUpdate(bool value) {
-    productGridExpanded = value;
+  ProductGridStyles productGridStyle = ProductGridStyles.style1;
+  productGridExpandedUpdate(ProductGridStyles value) {
+    productGridStyle = value;
     notifyListeners();
   }
 
