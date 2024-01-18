@@ -26,9 +26,11 @@ class MyApp extends StatelessWidget {
             TargetPlatform.android: CupertinoPageTransitionsBuilder(),
           }),
           elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => orangeColor))),
+            style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.resolveWith((states) => orangeColor),
+            ),
+          ),
           iconTheme: const IconThemeData(color: greyColor),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,

@@ -65,3 +65,4 @@ Widget shimmerContainer() {
     ),
   );
 }
+
